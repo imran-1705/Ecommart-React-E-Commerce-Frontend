@@ -1,69 +1,38 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import heroImg from '../../assets/heroImg.jpg'
 
-const navigations = [
-  { name: 'HOME', path: '/' },
-  { name: 'PRODUCTS', path: '/products' },
-  { name: 'ABOUT', path: '/about' },
-  { name: 'CONTACT', path: '/contact' }
-]
-
-const Header = () => {
+const Hero = () => {
   return (
-    <header className="bg-gradient-to-r from-purple-600 to-indigo-600 text-white shadow-md">
-      <div className="container mx-auto flex flex-wrap p-4 flex-col md:flex-row items-center justify-between">
-        
-        {/* Logo */}
-        <Link to="/" className="flex items-center mb-4 md:mb-0">
-          <svg 
-            xmlns="http://www.w3.org/2000/svg" 
-            fill="none" 
-            stroke="currentColor" 
-            strokeLinecap="round" 
-            strokeLinejoin="round" 
-            strokeWidth="2" 
-            className="w-10 h-10 text-white p-2 bg-white bg-opacity-20 rounded-full"
-            viewBox="0 0 24 24"
-          >
-            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
-          </svg>
-          <span className="ml-3 text-3xl font-extrabold tracking-wide">EcomMart</span>
-        </Link>
+    <section className="text-gray-600 body-font mt-20">
+      <div className="container mx-auto flex px-5 py-24 md:flex-row md:justify-center flex-col items-center">
+         {/* Text Content */}
+        <div className="md:w-1/2 flex flex-col items-start text-left space-y-6">
+          <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight text-indigo-800">
+            Get the product now before
+            <br className="hidden lg:inline-block" /> they get sold
+          </h1>
+          <p className="text-lg font-medium text-gray-700 leading-relaxed">
+            Grab your favorite items before they're gone! Enjoy exclusive deals on our high-quality, handpicked products delivered to your door.
+          </p>
+          <div className="flex flex-wrap gap-4 mt-4">
+            <button className="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition shadow">
+              Show All Products
+            </button>
+            <button className="bg-white hover:bg-gray-100 text-indigo-700 font-semibold py-3 px-6 rounded-lg border border-indigo-200 transition shadow">
+              Contact Us
+            </button>  </div>
+        </div>
+       <div className="w-full max-w-5xl flex justify-end md:h-full h-full">
+  <img
+    className="w-[700px] h-full  flex justify-end object-bottom-right rounded "
+    alt="hero"
+    src={heroImg}
+  />
+</div>
 
-        {/* Navigation */}
-        <nav className="flex flex-wrap items-center justify-center space-x-6 text-lg font-semibold">
-          {navigations.map((nav) => (
-            <Link
-              key={nav.path}
-              to={nav.path}
-              className="transition duration-300 hover:text-yellow-300"
-            >
-              {nav.name}
-            </Link>
-          ))}
-        </nav>
-
-        {/* Cart Button */}
-        <Link
-          to="/cart"
-          className="mt-4 md:mt-0 inline-flex items-center bg-yellow-300 text-indigo-900 font-semibold px-5 py-2 rounded-full shadow hover:bg-yellow-300 transition"
-        >
-          Go to Cart
-          <svg
-            fill="none"
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            className="w-4 h-4 ml-2"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </Link>
       </div>
-    </header>
+    </section>
   )
 }
 
-export default Header
+export default Hero
