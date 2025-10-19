@@ -1,117 +1,38 @@
-import React from 'react';
+import React from 'react'
 
-const statsData = [
-  {
-    id: 1,
-    title: '2.7K',
-    label: 'Downloads',
-    icon: (
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        className="w-12 h-12 mb-3 inline-block text-pink-500"
-        viewBox="0 0 24 24"
-      >
-        <path d="M8 17l4 4 4-4m-4-5v9"></path>
-        <path d="M20.88 18.09A5 5 0 0018 9h-1.26A8 8 0 103 16.29"></path>
-      </svg>
-    ),
-  },
-  {
-    id: 2,
-    title: '1.3K',
-    label: 'Users',
-    icon: (
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        className="w-12 h-12 mb-3 inline-block text-green-500"
-        viewBox="0 0 24 24"
-      >
-        <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
-        <circle cx="9" cy="7" r="4"></circle>
-        <path d="M23 21v-2a4 4 0 00-3-3.87m-4-12a4 4 0 010 7.75"></path>
-      </svg>
-    ),
-  },
-  {
-    id: 3,
-    title: '74',
-    label: 'Files',
-    icon: (
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        className="w-12 h-12 mb-3 inline-block text-yellow-500"
-        viewBox="0 0 24 24"
-      >
-        <path d="M3 18v-6a9 9 0 0118 0v6"></path>
-        <path d="M21 19a2 2 0 01-2 2h-1a2 2 0 01-2-2v-3a2 2 0 012-2h3zM3 19a2 2 0 002 2h1a2 2 0 002-2v-3a2 2 0 00-2-2H3z"></path>
-      </svg>
-    ),
-  },
-  {
-    id: 4,
-    title: '46',
-    label: 'Places',
-    icon: (
-      <svg
-        fill="none"
-        stroke="currentColor"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        strokeWidth="2"
-        className="w-12 h-12 mb-3 inline-block text-purple-500"
-        viewBox="0 0 24 24"
-      >
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-      </svg>
-    ),
-  },
-];
-
-const Stats = () => {
+const About = () => {
   return (
-    <section className="bg-gradient-to-r from-pink-50 via-purple-50 to-indigo-50 py-24">
-      <div className="container px-5 mx-auto">
-        <div className="text-center mb-20 max-w-3xl mx-auto">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-4">
-            Master Cleanse Reliac Heirloom
+    <section className="text-gray-700 body-font bg-gradient-to-b from-indigo-50 to-white py-24 min-h-screen">
+      <div className="container px-5 mx-auto flex flex-col md:flex-row items-center">
+        <div className="md:w-1/2 md:pr-16">
+          <h1 className="sm:text-4xl text-3xl font-extrabold title-font mb-6 text-indigo-700">
+            About EcomMart
           </h1>
-          <p className="text-lg text-gray-700 leading-relaxed">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify, subway tile poke farm-to-table. Franzen you probably
-            haven't heard of them man bun deep jianbing selfies heirloom prism
-            food truck ugh squid celiac humblebrag.
+          <p className="leading-relaxed text-lg text-gray-800 mb-6">
+            At <strong>EcomMart</strong>, we believe shopping should be a delightful experience. We
+            connect you with the best products across fashion, electronics, home decor, and more,
+            curated just for you. Our mission is to provide quality, value, and exceptional customer
+            service all in one place.
+          </p>
+          <p className="leading-relaxed text-lg text-gray-800 mb-6">
+            Founded in 2020, our platform is dedicated to innovation and sustainability. We
+            continually update our collection to keep up with the latest trends and eco-friendly
+            solutions, so you can shop consciously and confidently.
+          </p>
+          <p className="leading-relaxed text-lg text-gray-800 font-semibold">
+            Join us in making shopping smarter, simpler, and more colorful.
           </p>
         </div>
-
-        <div className="flex flex-wrap -m-4 justify-center">
-          {statsData.map(({ id, title, label, icon }) => (
-            <div
-              key={id}
-              className="p-6 md:w-1/4 sm:w-1/2 w-full cursor-pointer"
-            >
-              <div className="border-4 border-transparent hover:border-gradient-to-r hover:border-pink-400 rounded-xl bg-white shadow-lg hover:shadow-xl p-8 transition duration-500 ease-in-out transform hover:-translate-y-2 text-center">
-                {icon}
-                <h2 className="text-4xl font-bold text-gray-900">{title}</h2>
-                <p className="mt-2 text-lg font-semibold text-gray-700">{label}</p>
-              </div>
-            </div>
-          ))}
+        <div className="md:w-1/2 mt-10 md:mt-0 flex justify-center">
+          <img
+            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=600&q=80"
+            alt="About Us"
+            className="rounded-3xl shadow-lg max-w-full object-cover"
+          />
         </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Stats;
+export default About
