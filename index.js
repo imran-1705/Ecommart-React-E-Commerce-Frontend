@@ -1,17 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
+import FeatureCard from '../FeatureCard'
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <BrowserRouter>
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-  </BrowserRouter>
-);
+const Categories = () => {
+  const [categories, setCategories] = useState([])
+  useEffect(() => {
+    const fetchCategories = async () => {
+      const response = await fetch('https://fakestoreapi.com/products/categories')
+      const data = await response.json()
+      console.log(data, 'data')
+      setCategories(data)
+    }
+    fetchCategories()
+  }, [])
 
-reportWebVitals();
+  if (categories.length === 0) return <div>Loading.....</div>
+
+  return (
+      <FeatureCard cards={categories}/>
+  )
+}
+
+export default Categories
