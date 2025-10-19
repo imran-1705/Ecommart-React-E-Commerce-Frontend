@@ -1,106 +1,184 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
 
-const colors = [
-  'bg-gradient-to-r from-pink-400 via-red-400 to-yellow-400',
-  'bg-gradient-to-r from-green-400 via-blue-500 to-purple-600',
-  'bg-gradient-to-r from-indigo-400 via-purple-500 to-pink-500',
-]
-
-const icons = [
-  <svg
-    key="icon1"
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className="w-6 h-6"
-    viewBox="0 0 24 24"
-  >
-    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
-  </svg>,
-  <svg
-    key="icon2"
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className="w-6 h-6"
-    viewBox="0 0 24 24"
-  >
-    <circle cx="12" cy="12" r="10"></circle>
-    <path d="M2 12h20"></path>
-  </svg>,
-  <svg
-    key="icon3"
-    fill="none"
-    stroke="currentColor"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    strokeWidth="2"
-    className="w-6 h-6"
-    viewBox="0 0 24 24"
-  >
-    <path d="M4 4h16v16H4z"></path>
-    <path d="M4 12h16"></path>
-  </svg>,
-]
-
-const FeatureCard = ({ cards = ['Fashion', 'Electronics', 'Home Decor'] }) => {
+const Footer = () => {
   return (
-    <section className="text-gray-700 body-font bg-gradient-to-b from-indigo-50 to-white py-24">
-      <div className="container px-5 mx-auto">
-        <div className="flex flex-col text-center w-full mb-20">
-          <h2 className="text-indigo-600 tracking-widest font-extrabold text-sm sm:text-md mb-2">
-            CATEGORIES
-          </h2>
-          <h1 className="sm:text-4xl text-3xl font-extrabold title-font text-gray-900">
-            Our Popular Categories
-          </h1>
-        </div>
-        <div className="flex flex-wrap -m-6">
-          {cards.map((card, idx) => (
-            <Link
-              to={`/categories/${card.toLowerCase()}`}
-              key={idx}
-              className="p-6 md:w-1/3 cursor-pointer transform transition-transform duration-300 hover:scale-105"
+    <footer className="text-gray-700 bg-gradient-to-r from-indigo-700 via-purple-700 to-pink-600">
+      <div className="container px-5 py-16 mx-auto flex md:items-start md:flex-row flex-col">
+        {/* Brand & Description */}
+        <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left mb-10 md:mb-0">
+          <a className="flex title-font font-extrabold items-center justify-center md:justify-start text-white mb-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              className="w-12 h-12 p-2 bg-white rounded-full text-pink-600"
+              viewBox="0 0 24 24"
             >
-              <div
-                className={`flex flex-col h-full rounded-3xl shadow-lg overflow-hidden ${colors[idx % colors.length]} text-white p-10`}
-              >
-                <div className="flex items-center mb-6">
-                  <div className="w-12 h-12 rounded-full bg-white bg-opacity-30 flex items-center justify-center mr-5">
-                    {icons[idx % icons.length]}
-                  </div>
-                  <h2 className="text-2xl font-semibold capitalize">{card}</h2>
-                </div>
-                <p className="flex-grow leading-relaxed text-white/90 mb-8">
-                  Discover exclusive deals and top picks in <strong>{card}</strong> — trendy styles,
-                  quality products, and the latest arrivals.
-                </p>
-                <span className="inline-flex items-center text-white font-semibold bg-white bg-opacity-25 px-5 py-2 rounded-full hover:bg-opacity-40 transition-colors duration-300">
-                  Learn More
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-2"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </span>
-              </div>
-            </Link>
-          ))}
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+            </svg>
+            <span className="ml-3 text-3xl">EcomMart</span>
+          </a>
+          <p className="text-indigo-200 leading-relaxed">
+            Your one-stop shop for exclusive deals on fashion, electronics, home decor, and more. Quality products delivered fast & secure.
+          </p>
+        </div>
+
+        {/* Links Sections */}
+        <div className="flex-grow flex flex-wrap md:pl-20 -mb-10 md:mt-0 mt-10 text-center md:text-left">
+          {/* Products */}
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-8 md:mb-0">
+            <h2 className="title-font font-semibold text-white tracking-widest text-sm mb-4">PRODUCTS</h2>
+            <nav className="list-none space-y-3">
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">New Arrivals</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Best Sellers</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Discounts</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Gift Cards</a>
+              </li>
+            </nav>
+          </div>
+
+          {/* Support */}
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-8 md:mb-0">
+            <h2 className="title-font font-semibold text-white tracking-widest text-sm mb-4">SUPPORT</h2>
+            <nav className="list-none space-y-3">
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Help Center</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Returns</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Shipping</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">FAQs</a>
+              </li>
+            </nav>
+          </div>
+
+          {/* Company */}
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4 mb-8 md:mb-0">
+            <h2 className="title-font font-semibold text-white tracking-widest text-sm mb-4">COMPANY</h2>
+            <nav className="list-none space-y-3">
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">About Us</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Careers</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Press</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Blog</a>
+              </li>
+            </nav>
+          </div>
+
+          {/* Legal */}
+          <div className="lg:w-1/4 md:w-1/2 w-full px-4">
+            <h2 className="title-font font-semibold text-white tracking-widest text-sm mb-4">LEGAL</h2>
+            <nav className="list-none space-y-3">
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Privacy Policy</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Terms of Service</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Cookie Policy</a>
+              </li>
+              <li>
+                <a href="#" className="text-indigo-300 hover:text-white transition-colors duration-300">Accessibility</a>
+              </li>
+            </nav>
+          </div>
         </div>
       </div>
-    </section>
-  )
-}
 
-export default FeatureCard
+      {/* Bottom Bar */}
+      <div className="bg-indigo-900">
+        <div className="container mx-auto py-6 px-5 flex flex-wrap flex-col sm:flex-row items-center justify-between">
+          <p className="text-indigo-300 text-sm text-center sm:text-left">
+            © {new Date().getFullYear()} EcomMart — Made with 💜 by{' '}
+            <a
+              href="https://twitter.com/knyttneve"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-pink-400 hover:text-pink-600 font-semibold transition-colors duration-300"
+            >
+              Imran Mirza
+            </a>
+          </p>
+
+          <span className="inline-flex mt-4 sm:mt-0 space-x-6 justify-center sm:justify-start">
+            <a href="#" className="text-indigo-300 hover:text-pink-400 transition-colors duration-300">
+              <svg
+                fill="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z" />
+              </svg>
+            </a>
+            <a href="#" className="text-indigo-300 hover:text-pink-400 transition-colors duration-300">
+              <svg
+                fill="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z" />
+              </svg>
+            </a>
+            <a href="#" className="text-indigo-300 hover:text-pink-400 transition-colors duration-300">
+              <svg
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01" />
+              </svg>
+            </a>
+            <a href="#" className="text-indigo-300 hover:text-pink-400 transition-colors duration-300">
+              <svg
+                fill="currentColor"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="0"
+                className="w-6 h-6"
+                viewBox="0 0 24 24"
+              >
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+            </a>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
